@@ -1,9 +1,9 @@
 {
-  "name": "native-x-spacer",
+  "name": "native-x-text-input",
   "version": "0.0.0-development",
-  "description": "This component adds space between items in Stack",
+  "description": "Text input component",
   "main": "lib/index.js",
-  "repository": "https://github.com/rintoj/native-x-spacer.git",
+  "repository": "https://github.com/rintoj/native-x-text-input.git",
   "author": "Rinto Jose <rintoj@gmail.com>",
   "license": "MIT",
   "private": false,
