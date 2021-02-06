@@ -99,7 +99,7 @@ export function TextInput(props: TextInputProps) {
           value={value}
           editable={!disabled}
           autoCapitalize={autoCapitalize}
-          autoFocus={autoFocus || true}
+          autoFocus={autoFocus}
           numberOfLines={numberOfLines}
           secureTextEntry={password}
           multiline={multiline}
