@@ -37,6 +37,7 @@ export interface TextInputProps extends ContainerStyleProps, TextStyleProps, For
   fill?: boolean
   style?: any
   errorColor?: string
+  placeholderColor?: string
 }
 
 export function TextInput(props: TextInputProps) {
@@ -79,7 +80,7 @@ export function TextInput(props: TextInputProps) {
   const textInputStyle = useTextStyle({ textColor })
   const primaryTextColor = getTextColor(COLOR.SECONDARY)
   const transparentColor = getColor(COLOR.TRANSPARENT)
-  const dividerColor = getColor(COLOR.DIVIDER)
+  const placeholderColor = getColor(props.placeholderColor || COLOR.DIVIDER)
   const errorColor = getTextColor(errorColorName)
   const content = (
     <View style={styles.outerContainer}>
@@ -103,7 +104,7 @@ export function TextInput(props: TextInputProps) {
           numberOfLines={numberOfLines}
           secureTextEntry={password}
           multiline={multiline}
-          placeholderTextColor={dividerColor}
+          placeholderTextColor={placeholderColor}
           underlineColorAndroid={transparentColor}
           style={[
             textInputStyle,
