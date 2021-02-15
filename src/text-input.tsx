@@ -78,10 +78,10 @@ export function TextInput(props: TextInputProps) {
   const containerStyle = useContainerStyle({ ...props, backgroundColor, borderColor, padding })
   const textContainerInputStyle = useContainerStyle({ padding })
   const textInputStyle = useTextStyle({ textColor })
-  const primaryTextColor = getTextColor(COLOR.SECONDARY)
-  const transparentColor = getColor(COLOR.TRANSPARENT)
-  const placeholderColor = getColor(props.placeholderColor || COLOR.DIVIDER)
-  const errorColor = getTextColor(errorColorName)
+  const primaryTextColor = getTextColor?.(COLOR.SECONDARY)
+  const transparentColor = getColor?.(COLOR.TRANSPARENT)
+  const placeholderColor = getColor?.(props.placeholderColor || COLOR.DIVIDER)
+  const errorColor = getTextColor?.(errorColorName)
   const content = (
     <View style={styles.outerContainer}>
       <View
