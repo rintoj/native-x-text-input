@@ -9,30 +9,35 @@ import {
 } from 'native-x-theme'
 import * as React from 'react'
 import { ReactNode } from 'react'
-import { Text, TextInput as RNTextInput, View } from 'react-native'
+import {
+  Text,
+  TextInput as RNTextInput,
+  TextInputProps as RNTextInputProps,
+  View,
+} from 'react-native'
 import { styles as s } from 'tachyons-react-native'
 
 const styles = {
   spacer: { padding: 4 },
-  input: [s.flex, s.b],
+  input: [s.flex, s.b, s.f5],
   outerContainer: [s.pv2, s.w100],
   innerContainer: [s.ba, s.flexRow, s.itemsCenter],
   icon: [s.justifyCenter, s.itemsCenter, s.ph2],
 }
 
-export interface TextInputProps extends ContainerStyleProps, TextStyleProps, FormChildProp<string> {
+export interface TextInputProps
+  extends Omit<RNTextInputProps, 'onChange' | 'onBlur'>,
+    ContainerStyleProps,
+    TextStyleProps,
+    FormChildProp<string> {
   width?: number
   height?: number
   label?: string
-  multiline?: boolean
+  labelColor?: string
   rounded?: boolean
   error?: string | Error | null
-  autoCapitalize?: 'none' | 'words'
-  autoFocus?: boolean
   disabled?: boolean
-  placeholder?: string
   password?: boolean
-  numberOfLines?: number
   icon?: ReactNode
   fill?: boolean
   style?: any
@@ -45,21 +50,18 @@ export function TextInput(props: TextInputProps) {
     width,
     height,
     style,
-    numberOfLines,
     value,
     icon,
     label,
-    placeholder,
-    multiline,
     onChangeText,
-    autoCapitalize,
-    autoFocus,
     rounded = false,
     disabled,
     error,
     password,
     fill = true,
+    labelColor = COLOR.SECONDARY,
     padding = 'small',
+    ...textInputProps
   } = props
   const isEmpty = value == null || value === ''
   const backgroundColor = disabled
@@ -78,8 +80,8 @@ export function TextInput(props: TextInputProps) {
   const containerStyle = useContainerStyle({ ...props, backgroundColor, borderColor, padding })
   const textContainerInputStyle = useContainerStyle({ padding })
   const textInputStyle = useTextStyle({ textColor })
-  const primaryTextColor = getTextColor?.(COLOR.SECONDARY)
   const transparentColor = getColor?.(COLOR.TRANSPARENT)
+  const labelColorStyle = getTextColor?.(labelColor)
   const placeholderColor = getColor?.(props.placeholderColor || COLOR.DIVIDER)
   const errorColor = getTextColor?.(errorColorName)
   const content = (
@@ -96,14 +98,10 @@ export function TextInput(props: TextInputProps) {
       >
         {icon ? <View style={styles.icon}>{icon}</View> : null}
         <RNTextInput
-          placeholder={placeholder}
+          {...(textInputProps as RNTextInputProps)}
           value={value}
           editable={!disabled}
-          autoCapitalize={autoCapitalize}
-          autoFocus={autoFocus}
-          numberOfLines={numberOfLines}
           secureTextEntry={password}
-          multiline={multiline}
           placeholderTextColor={placeholderColor}
           underlineColorAndroid={transparentColor}
           style={[
@@ -128,7 +126,7 @@ export function TextInput(props: TextInputProps) {
   if (label) {
     return (
       <View style={styles.outerContainer}>
-        <Text style={primaryTextColor}>{label}</Text>
+        <Text style={[labelColorStyle, s.f5]}>{label}</Text>
         <View style={styles.spacer} />
         {content}
       </View>
