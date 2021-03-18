@@ -64,10 +64,10 @@ export function TextInput(props: TextInputProps) {
     ...textInputProps
   } = props
   const isEmpty = value == null || value === ''
-  const backgroundColor = disabled
-    ? COLOR.DISABLED
-    : props.backgroundColor
+  const backgroundColor = props.backgroundColor
     ? props.backgroundColor
+    : disabled
+    ? COLOR.DISABLED
     : COLOR.INPUT
   const hasError = error != null
   const errorColorName = props.errorColor || COLOR.ERROR
