@@ -20,7 +20,7 @@ import { styles as s } from 'tachyons-react-native'
 const styles = {
   spacer: { padding: 4 },
   input: [s.flex, s.b, s.f5],
-  outerContainer: [s.pv2, s.w100],
+  outerContainer: [s.pv1, s.w100],
   innerContainer: [s.ba, s.flexRow, s.itemsCenter],
   icon: [s.justifyCenter, s.itemsCenter, s.ph2],
 }
@@ -39,6 +39,7 @@ export interface TextInputProps
   disabled?: boolean
   password?: boolean
   icon?: ReactNode
+  rightIcon?: ReactNode
   fill?: boolean
   style?: any
   errorColor?: string
@@ -52,6 +53,7 @@ export function TextInput(props: TextInputProps) {
     style,
     value,
     icon,
+    rightIcon,
     label,
     onChangeText,
     rounded = false,
@@ -113,6 +115,7 @@ export function TextInput(props: TextInputProps) {
           ]}
           onChangeText={onChangeText as any}
         />
+        {rightIcon ? <View style={styles.icon}>{rightIcon}</View> : null}
       </View>
       {!!error && (
         <>

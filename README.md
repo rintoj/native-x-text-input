@@ -68,23 +68,24 @@ function MyComponent() {
 
 ## API
 
-| Property                    | Default Value | Usage                                              |
-| --------------------------- | ------------- | -------------------------------------------------- |
-| label?: string              |               | Label for the input                                |
-| placeholder?: string        |               | Placeholder text for the text input                |
-| multiline?: boolean         |               | Set true to allow more than one line for the input |
-| rounded?: boolean           | false         | Set true to use rounded corners                    |
-| error?: string              |               | Error message to show                              |
-| autoCapitalization?: string |               | Valid values are: 'none', 'words'                  |
-| autoFocus?: boolean         |               | Set true to auto focus                             |
-| disabled?: boolean          |               | Set true to disable input                          |
-| password?: boolean          |               | Set true to use the input as secret input          |
-| numberOfLines?: number      |               | Number of lines to allow                           |
-| icon?: ReactNode            |               | Icon component to render with in the component     |
-| fill?: boolean              |               | Set true to fill the container                     |
-| width?: number              |               | Width of the text input                            |
-| height?: number             |               | Height of the text input                           |
-| errorColor?: string         | 'error'       | One of the colors specified by theme provider      |
+| Property                    | Default Value | Usage                                                      |
+| --------------------------- | ------------- | ---------------------------------------------------------- |
+| label?: string              |               | Label for the input                                        |
+| placeholder?: string        |               | Placeholder text for the text input                        |
+| multiline?: boolean         |               | Set true to allow more than one line for the input         |
+| rounded?: boolean           | false         | Set true to use rounded corners                            |
+| error?: string              |               | Error message to show                                      |
+| autoCapitalization?: string |               | Valid values are: 'none', 'words'                          |
+| autoFocus?: boolean         |               | Set true to auto focus                                     |
+| disabled?: boolean          |               | Set true to disable input                                  |
+| password?: boolean          |               | Set true to use the input as secret input                  |
+| numberOfLines?: number      |               | Number of lines to allow                                   |
+| icon?: ReactNode            |               | Icon component to render with in the component             |
+| rightIcon?: ReactNode       |               | Icon component to render at the right end of the component |
+| fill?: boolean              |               | Set true to fill the container                             |
+| width?: number              |               | Width of the text input                                    |
+| height?: number             |               | Height of the text input                                   |
+| errorColor?: string         | 'error'       | One of the colors specified by theme provider              |
 
 ## Automatic Release
 
