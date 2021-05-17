@@ -19,7 +19,7 @@ import { styles as s } from 'tachyons-react-native'
 
 const styles = {
   spacer: { padding: 4 },
-  input: [s.flex, s.b, s.f5],
+  input: [s.flex, s.f5],
   outerContainer: [s.pv1, s.w100],
   innerContainer: [s.ba, s.flexRow, s.itemsCenter],
   icon: [s.justifyCenter, s.itemsCenter, s.ph2],
