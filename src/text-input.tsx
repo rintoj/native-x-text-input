@@ -19,7 +19,7 @@ import { styles as s } from 'tachyons-react-native'
 
 const styles = {
   spacer: { padding: 4 },
-  input: [s.flex, s.f5],
+  input: [s.flex, s.f5, { outline: 0 }],
   outerContainer: [s.pv1, s.w100],
   innerContainer: [s.ba, s.flexRow, s.itemsCenter],
   icon: [s.justifyCenter, s.itemsCenter, s.ph2],
@@ -74,7 +74,11 @@ export function TextInput(props: TextInputProps) {
   const hasError = error != null
   const errorColorName = props.errorColor || COLOR.ERROR
   const textColor =
-    hasError && !isEmpty ? errorColorName : isEmpty || disabled ? COLOR.SECONDARY : COLOR.SECONDARY
+    hasError && !isEmpty
+      ? errorColorName
+      : disabled
+      ? COLOR.TERTIARY
+      : textInputProps.textColor ?? COLOR.SECONDARY
 
   const borderColor = hasError ? errorColorName : COLOR.TRANSPARENT
   const { getColor, getTextColor } = useTheme()
@@ -106,13 +110,7 @@ export function TextInput(props: TextInputProps) {
           secureTextEntry={password}
           placeholderTextColor={placeholderColor}
           underlineColorAndroid={transparentColor}
-          style={[
-            textInputStyle,
-            textContainerInputStyle,
-            styles.input,
-            textColor,
-            ...(style || []),
-          ]}
+          style={[textInputStyle, textContainerInputStyle, styles.input, ...(style || [])]}
           onChangeText={onChangeText as any}
         />
         {rightIcon ? <View style={styles.icon}>{rightIcon}</View> : null}
