@@ -20,7 +20,7 @@ import { styles as s } from 'tachyons-react-native'
 const styles = {
   spacer: { padding: 4 },
   input: [s.flex, s.f5, { outline: 0 }],
-  outerContainer: [s.pv1, s.w100],
+  outerContainer: [s.pv1],
   innerContainer: [s.ba, s.flexRow, s.itemsCenter],
   icon: [s.justifyCenter, s.itemsCenter, s.ph2],
 }
@@ -90,12 +90,13 @@ export function TextInput(props: TextInputProps) {
   const labelColorStyle = getTextColor?.(labelColor)
   const placeholderColor = getColor?.(props.placeholderColor || COLOR.DIVIDER)
   const errorColor = getTextColor?.(errorColorName)
+  const fillStyle: any = fill ? { flex: 'auto' } : undefined
   const content = (
-    <View style={styles.outerContainer}>
+    <View style={[styles.outerContainer, fillStyle]}>
       <View
         style={[
           rounded ? s.brPill : s.br3,
-          fill ? [s.w100] : undefined,
+          fill ? [s.flexAuto] : undefined,
           width ? { width } : undefined,
           height ? { height } : undefined,
           styles.innerContainer,
@@ -126,7 +127,7 @@ export function TextInput(props: TextInputProps) {
 
   if (label) {
     return (
-      <View style={styles.outerContainer}>
+      <View style={[styles.outerContainer, fillStyle]}>
         <Text style={[labelColorStyle, s.f5]}>{label}</Text>
         <View style={styles.spacer} />
         {content}
