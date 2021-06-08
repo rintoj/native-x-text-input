@@ -36,7 +36,7 @@
     "tachyons-react-native": "^1.0.4"
   },
   "peerDependencies": {
-    "native-x-form": "^1.0.2",
+    "native-x-form": "^1.0.3",
     "native-x-theme": "^1.0.9"
   }
 }
