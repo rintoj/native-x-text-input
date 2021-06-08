@@ -5714,19 +5714,12 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-x-form@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/native-x-form/-/native-x-form-1.0.0.tgz#6982031943834b66f2464b427249b993e894a2c4"
-  integrity sha512-CSR2aFk2sIfeWbL9avCwVxK0oMrN1q/nHJBVkHLIZUQB72Nz5ZdEMs1m/Ac/pxPTHGV1ICygHBZmAouMiQaPFQ==
+native-x-form@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/native-x-form/-/native-x-form-1.0.2.tgz#e64bba63d57420b74555282cafcfdb173b7f6083"
+  integrity sha512-5I8WAhCzXKigQVHHJ+4Yy9RU8S5YLB7XqL/dwL9Hgq4hhO/wKbAhyii+7xh8bPS3eZDhuKzn8iTeDXmT1W4VOA==
   dependencies:
     email-validator "^2.0.4"
-    tachyons-react-native "^1.0.4"
-
-native-x-theme@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/native-x-theme/-/native-x-theme-1.0.4.tgz#da9ebbb6a1365056cf551137ba2fd91c5feb36c4"
-  integrity sha512-9+bXPDqrJAxtnB/HVwrD713E8l7Q6XNaKTHRTRF19x79qDhWh7zBI7sgZRSTzkLB5ab3yGEA/RJkgPgTIl0IWQ==
-  dependencies:
     tachyons-react-native "^1.0.4"
 
 natural-compare@^1.4.0:

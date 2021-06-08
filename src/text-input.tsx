@@ -70,7 +70,7 @@ export function TextInput(props: TextInputProps) {
     ? props.backgroundColor
     : disabled
     ? COLOR.DISABLED
-    : COLOR.INPUT
+    : COLOR.TERTIARY
   const hasError = error != null
   const errorColorName = props.errorColor || COLOR.ERROR
   const textColor =
