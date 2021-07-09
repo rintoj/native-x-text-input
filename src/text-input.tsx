@@ -10,6 +10,7 @@ import {
 import * as React from 'react'
 import { ReactNode } from 'react'
 import {
+  Platform,
   Text,
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
@@ -19,7 +20,7 @@ import { styles as s } from 'tachyons-react-native'
 
 const styles = {
   spacer: { padding: 4 },
-  input: [s.flex, s.f5, { outline: 0 }],
+  input: [s.flex, s.f5, Platform.select({web:{outlineWidth:0}})],
   outerContainer: [s.pv1],
   innerContainer: [s.ba, s.flexRow, s.itemsCenter],
   icon: [s.justifyCenter, s.itemsCenter, s.ph2],
