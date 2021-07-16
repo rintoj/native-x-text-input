@@ -91,13 +91,13 @@ export function TextInput(props: TextInputProps) {
   const labelColorStyle = getTextColor?.(labelColor)
   const placeholderColor = getColor?.(props.placeholderColor || COLOR.DIVIDER)
   const errorColor = getTextColor?.(errorColorName)
-  const fillStyle: any = fill ? { flex: 'auto' } : undefined
+  const fillStyle: any = fill ? Platform.select({ web: { flex: 'auto' } }) : undefined
   const content = (
     <View style={[styles.outerContainer, fillStyle]}>
       <View
         style={[
           rounded ? s.brPill : s.br3,
-          fill ? [s.flexAuto] : undefined,
+          fill ? s.flexAuto : undefined,
           width ? { width } : undefined,
           height ? { height } : undefined,
           styles.innerContainer,
