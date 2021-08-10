@@ -34,9 +34,5 @@
   },
   "dependencies": {
     "tachyons-react-native": "^1.0.4"
-  },
-  "peerDependencies": {
-    "native-x-form": "^1.0.3",
-    "native-x-theme": "*"
   }
 }
