@@ -37,6 +37,6 @@
   },
   "peerDependencies": {
     "native-x-form": "^1.0.3",
-    "native-x-theme": "^1.0.9"
+    "native-x-theme": "*"
   }
 }
